@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Río Atoyac: una herida de Puebla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#075985;--azul2:#0e7490;--oscuro:#073b4c;--agua:#dff4f5;--crema:#f7f3ea;--papel:#eee6d5;--tinta:#17344d;--gris:#64727b;--linea:#b8c9cf;--blanco:#fffdf8;--verde:#39766a;--rojo:#9d4b4b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--crema);color:var(--tinta);font-family:'Montserrat',sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.09;background:repeating-linear-gradient(0deg,transparent 0,transparent 4px,rgba(7,89,133,.12) 5px);z-index:100}
+img{display:block;max-width:100%}a{color:inherit}
+header{min-height:92vh;position:relative;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--linea)}
+.hero-img{position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,243,234,.96) 0%,rgba(247,243,234,.73) 42%,rgba(247,243,234,.15) 100%),url("https://commons.wikimedia.org/wiki/Special:FilePath/Vista%20del%20r%C3%ADo%20Atoyac%20desde%20el%20Tren%20tur%C3%ADstico%20Puebla-Cholula.jpg") center/cover}
+.hero-content{position:relative;z-index:2;width:min(1180px,90%);margin:auto;padding:80px 0}
+.kicker,.label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--azul)}
+h1{font-family:'Bodoni Moda',serif;font-size:clamp(4rem,10vw,8.5rem);line-height:.84;letter-spacing:-.05em;color:var(--azul);margin:18px 0}
+h1 em{color:var(--oscuro)}.subtitle{max-width:720px;font-family:'Bodoni Moda',serif;font-size:clamp(1.2rem,2.2vw,1.75rem);line-height:1.45}
+.meta{margin-top:30px;display:inline-block;border:1px solid #8db2c0;padding:11px 16px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,253,248,.72)}
+nav{position:sticky;top:0;z-index:90;display:flex;justify-content:center;flex-wrap:wrap;gap:3px;padding:10px;background:rgba(247,243,234,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(7,89,133,.15)}
+nav .nav-link{display:inline-block;border:1px solid transparent;background:transparent;color:var(--azul);padding:10px 13px;cursor:pointer;font:600 .6rem 'Montserrat';letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+nav .nav-link:hover,nav .nav-link:focus-visible{border-color:var(--azul);background:var(--agua);outline:none}
+section{width:min(1160px,90%);margin:auto;padding:90px 0;scroll-margin-top:72px}
+.section-title{font-family:'Bodoni Moda',serif;color:var(--azul);font-size:clamp(2.6rem,5.5vw,5rem);line-height:.96;margin:10px 0 25px}
+.intro{max-width:820px;color:#53636c;line-height:1.85}.lead{font-family:'Bodoni Moda',serif;font-size:1.4rem;line-height:1.55}
+.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}.card{background:var(--blanco);border:1px solid rgba(7,89,133,.17);padding:30px;box-shadow:10px 14px 35px rgba(30,60,70,.08)}
+.card h3{font-family:'Bodoni Moda',serif;color:var(--azul);font-size:2rem;margin:0 0 12px}.card p,.source-list li{line-height:1.7;color:#596a73;font-size:.82rem}
+.visual{margin-top:42px;border:1px solid rgba(7,89,133,.2);background:var(--blanco)}.visual img{width:100%;height:420px;object-fit:cover}.caption{padding:11px 14px;font-size:.58rem;color:#697780;line-height:1.5;background:var(--papel)}
+.gallery{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:30px}.gallery .tall img{height:520px}.gallery img{height:250px;width:100%;object-fit:cover}.stack{display:grid;gap:18px}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--azul);margin-top:45px}
+.time{padding:25px 15px 0 0;position:relative}.time:before{content:"";position:absolute;top:-5px;width:10px;height:10px;border-radius:50%;background:var(--azul)}
+.time h3{font-family:'Bodoni Moda',serif;color:var(--azul);margin:0 0 8px}.time p{font-size:.72rem;line-height:1.65;color:#65747c}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px}.stat{padding:26px;min-height:190px;background:var(--azul);color:white;position:relative;overflow:hidden}.stat:nth-child(2){background:var(--oscuro)}.stat:nth-child(3){background:var(--verde)}.stat:nth-child(4){background:#78694d}.num{font-family:'Bodoni Moda',serif;font-size:2.5rem;line-height:1;margin-bottom:15px}.stat p{font-size:.7rem;line-height:1.6;margin:0}
+.bars{margin-top:35px;background:var(--blanco);padding:25px;border:1px solid rgba(7,89,133,.15)}.barrow{display:grid;grid-template-columns:150px 1fr 70px;gap:12px;align-items:center;margin:17px 0;font-size:.72rem}.bar{height:14px;background:#d8e5e8;overflow:hidden}.fill{height:100%;background:var(--azul)}
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}.person{background:var(--blanco);padding:25px;border-top:4px solid var(--azul)}.person h3{font-family:'Bodoni Moda',serif;color:var(--azul);margin:0 0 10px;font-size:1.55rem}.person p{font-size:.76rem;line-height:1.65;color:#596970}
+.impact{background:var(--oscuro);color:white;width:100%;scroll-margin-top:72px;}.impact-inner{width:min(1160px,90%);margin:auto;padding:90px 0}.impact .section-title{color:white}.impact .intro{color:#d7e7eb}
+.warning{font-family:'Bodoni Moda',serif;font-size:clamp(2rem,4vw,3.8rem);line-height:1;text-align:center;margin:45px auto;max-width:950px;color:white}
+.chain{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px}.chain span{border:1px solid rgba(7,89,133,.25);padding:14px 17px;font-size:.7rem;text-transform:uppercase;color:var(--azul);background:rgba(255,255,255,.4)}.impact .chain span{border-color:rgba(255,255,255,.3);color:white;background:transparent}.arrow{opacity:.6}
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}.case{background:var(--blanco);border:1px solid rgba(7,89,133,.15);overflow:hidden}.case img{width:100%;height:220px;object-fit:cover}.case-body{padding:24px}.case h3{font-family:'Bodoni Moda',serif;color:var(--azul);font-size:1.8rem;margin:0 0 10px}.case p{font-size:.77rem;line-height:1.7;color:#586a73}
+.process{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:40px}.step{background:var(--agua);border:1px solid #b5d6db;padding:20px 12px;min-height:160px}.step b{font-family:'Bodoni Moda',serif;color:var(--azul);font-size:2rem}.step h3{font-size:.75rem;line-height:1.35;color:var(--azul)}.step p{font-size:.66rem;line-height:1.5;color:#5c6d75}
+.art{background:var(--azul);width:100%;color:white}.art-inner{width:min(1160px,90%);margin:auto;padding:90px 0}.art .section-title{color:white}.art .intro{color:#d9e8ed}.art-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}.art img{width:100%;height:430px;object-fit:cover}.art-copy{border:1px solid rgba(255,255,255,.22);padding:32px;line-height:1.8;font-size:.82rem;background:rgba(255,255,255,.07)}
+.closing{text-align:center;padding:120px 20px}.closing blockquote{font-family:'Bodoni Moda',serif;font-size:clamp(2.7rem,6vw,5.5rem);line-height:.94;color:var(--azul);max-width:900px;margin:20px auto}.closing p{max-width:760px;margin:auto;color:#5d6d76;line-height:1.85}.impact-line{margin:50px auto 0;padding:28px;max-width:850px;background:var(--papel);font-family:'Bodoni Moda',serif;font-size:clamp(1.5rem,3vw,2.4rem);color:var(--oscuro)}
+.source-list{padding-left:20px}.source-list a{color:var(--azul);text-decoration:none}.source-list a:hover{text-decoration:underline}
+.sources-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:30px}.sourcebox{padding:22px;background:var(--papel);border-left:4px solid var(--azul)}.sourcebox strong{color:var(--azul)}.sourcebox p{font-size:.76rem;line-height:1.65;color:#596970}
+footer{border-top:1px solid var(--linea);padding:32px 5%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:#6d7980}footer strong{color:var(--azul)}
+.top{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid #8db2c0;background:rgba(247,243,234,.95);color:var(--azul);cursor:pointer;opacity:0;pointer-events:none;text-decoration:none;display:grid;place-items:center}.top.show{opacity:1;pointer-events:auto}
+@media(max-width:900px){.grid2,.art-grid{grid-template-columns:1fr}.timeline{grid-template-columns:1fr;gap:20px}.stats{grid-template-columns:1fr 1fr}.people,.cases{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr}}
+@media(max-width:560px){section{padding:65px 0}.stats{grid-template-columns:1fr}.process{grid-template-columns:1fr}.barrow{grid-template-columns:110px 1fr 55px}.hero-content{padding:55px 0}.visual img{height:300px}}
+</style>
+</head>
+<body>
+
+<header id="inicio">
+<div class="hero-img"></div>
+<div class="hero-content">
+<div class="kicker">ODS 06 · Agua limpia y saneamiento · Puebla–Tlaxcala</div>
+<h1>Río Atoyac:<br><em>una herida de Puebla</em></h1>
+<p class="subtitle">Una mirada breve y visual a su historia, contaminación, impactos y a las acciones que pueden formar parte de una recuperación a largo plazo.</p>
+<div class="meta">Agua · territorio · memoria · contaminación · esperanza</div>
+</div>
+</header>
+
+<nav aria-label="Navegación principal">
+<a class="nav-link" href="#rio">01 · Qué es</a>
+<a class="nav-link" href="#contaminacion">02 · Contaminación</a>
+<a class="nav-link" href="#datos">03 · Datos</a>
+<a class="nav-link" href="#fuentes">04 · Quiénes</a>
+<a class="nav-link" href="#personas">05 · Personas</a>
+<a class="nav-link" href="#recuperacion">06 · ¿Puede?</a>
+<a class="nav-link" href="#soluciones">07 · Soluciones</a>
+<a class="nav-link" href="#cierre">Cierre</a>
+</nav>
+
+<section id="rio">
+<div class="grid2">
+<div>
+<div class="label">01 · Qué es el río Atoyac?</div>
+<h2 class="section-title">Origen, historia y características</h2>
+<p class="lead">El Atoyac forma parte de la Cuenca del Alto Atoyac y atraviesa territorios de Puebla y Tlaxcala.</p>
+<p class="intro">La información del proyecto lo describe como un río de aproximadamente 200 km, cuyo sistema recibe aportes relacionados con los volcanes Iztaccíhuatl–Popocatépetl y que continúa hacia la presa Manuel Ávila Camacho, conocida como Valsequillo. Es un sistema hídrico ligado a comunidades, agricultura, industria, paisaje y vida cotidiana.</p>
+</div>
+<div class="card"><h3>Un río es más que agua</h3><p>También es territorio, memoria, ecosistema y soporte para actividades humanas. Por eso su deterioro afecta más que la apariencia del cauce: modifica relaciones entre agua, suelo, biodiversidad y sociedad.</p></div>
+</div>
+<div class="gallery">
+<figure class="tall visual"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sendero%20del%20R%C3%ADo%20Atoyac%2C%20Puebla%2004.jpg" alt="Sendero del Río Atoyac en Puebla"><figcaption class="caption">Sendero del Río Atoyac, Puebla · Isaacvp · CC0.</figcaption></figure>
+<div class="stack">
+<figure class="visual"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Antiguo%20Puente%20M%C3%A9xico-Puebla.jpg" alt="Antiguo puente México-Puebla"><figcaption class="caption">Antiguo Puente México-Puebla · Wikimedia Commons.</figcaption></figure>
+<figure class="visual"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Valsequillo%20dam.jpg" alt="Presa Valsequillo"><figcaption class="caption">Presa Valsequillo · Wikimedia Commons.</figcaption></figure>
+</div></div>
+<div class="timeline">
+<div class="time"><h3>Siglos anteriores</h3><p>El agua forma parte de la vida y actividades productivas de las poblaciones ribereñas.</p></div>
+<div class="time"><h3>Siglo XIX</h3><p>La industrialización fortalece el corredor productivo asociado al río.</p></div>
+<div class="time"><h3>1835</h3><p>La Constancia Mexicana inicia operaciones y el corredor textil adquiere relevancia.</p></div>
+<div class="time"><h3>Siglos XX–XXI</h3><p>El crecimiento industrial y urbano incrementa la presión sobre la cuenca.</p></div>
+<div class="time"><h3>Hoy</h3><p>El reto es pasar del deterioro acumulado a una recuperación sostenida.</p></div>
+</div>
+</section>
+
+<section id="contaminacion">
+<div class="label">02 · ¿Cómo comenzó la contaminación?</div>
+<h2 class="section-title">Industria, residuos y aguas residuales</h2>
+<div class="grid2"><div><p class="lead">La contaminación no tiene una sola causa ni comenzó en un solo momento.</p><p class="intro">La historia de la cuenca muestra distintas etapas: actividades económicas y poblaciones ribereñas; después drenajes urbanos, rastros, mercados y fábricas textiles; posteriormente industrialización intensiva y, más tarde, actividades de lavado y teñido de mezclilla. Hoy se suman descargas municipales e industriales, residuos sólidos y contaminación difusa.</p></div>
+<div class="card"><h3>Una problemática multifactorial</h3><p>Los diagnósticos recientes identifican como fuentes principales las descargas municipales e industriales, tiraderos de basura y zonas deforestadas. También existen aportes difusos, como escurrimientos de agroquímicos en zonas agrícolas.</p></div></div>
+<figure class="visual"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ducto%20de%20Pemex%20sobre%20R%C3%ADo%20Atoyac%20en%20la%20ciudad%20de%20Puebla.jpg" alt="Ducto sobre el Río Atoyac en Puebla"><figcaption class="caption">Ducto sobre el Río Atoyac en Puebla · Isaacvp · CC BY-SA 4.0.</figcaption></figure>
+</section>
+
+<section id="datos">
+<div class="label">03 · ¿Qué tan contaminado está?</div>
+<h2 class="section-title">Los números muestran la dimensión del problema</h2>
+<p class="intro">El diagnóstico de CONAGUA para 2012–2024 encontró que 140 de 143 sitios monitoreados en 44 cuerpos de agua de la cuenca Alto Atoyac se clasificaron como contaminados o fuertemente contaminados: 97.9 %. En el cauce principal del Atoyac, el Zahuapan y el Aseseca, 68 de 70 sitios (97.14 %) tuvieron esa clasificación.</p>
+<div class="stats">
+<div class="stat"><div class="num">146.3 t/día</div><p>Materia orgánica medida como DQO reportada en la Declaratoria de clasificación.</p></div>
+<div class="stat"><div class="num">62.8 t/día</div><p>Sólidos suspendidos totales.</p></div>
+<div class="stat"><div class="num">14.7 t/día</div><p>Nutrientes.</p></div>
+<div class="stat"><div class="num">0.14 t/día</div><p>Metales pesados; además se reportaron compuestos orgánicos tóxicos y contaminación microbiológica.</p></div>
+</div>
+<div class="bars"><strong>Clasificación de sitios monitoreados · Alto Atoyac, 2012–2024</strong>
+<div class="barrow"><span>Contaminados</span><div class="bar"><div class="fill" style="width:97.9%"></div></div><b>97.9%</b></div>
+<div class="barrow"><span>Otros</span><div class="bar"><div class="fill" style="width:2.1%"></div></div><b>2.1%</b></div>
+<p style="font-size:.65rem;color:#6a7880;line-height:1.5">El 97.9 % corresponde a 140 de 143 sitios de la cuenca Alto Atoyac analizados por la RENAMECA.</p></div>
+<figure class="visual"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Contaminaci%C3%B3n%20del%20R%C3%ADo%20Atoyac%2C%20Tlaxcala.jpg" alt="Contaminación del Río Atoyac en Tlaxcala"><figcaption class="caption">Contaminación del Río Atoyac, Tlaxcala · Isaacvp · CC BY-SA 4.0.</figcaption></figure>
+</section>
+
+<section id="fuentes">
+<div class="label">04 · ¿Quiénes contaminan el río?</div>
+<h2 class="section-title">No existe un solo responsable</h2>
+<p class="intro">Las fuentes se distribuyen entre actividades productivas, asentamientos humanos y contaminación difusa. La responsabilidad de reducirlas también requiere coordinación entre sectores.</p>
+<div class="people">
+<div class="person"><h3>Industria</h3><p>Actividades textiles, químicas, petroquímicas, automotrices, metalúrgicas, metalmecánicas, cerámicas, electrónicas, farmacéuticas y papeleras pueden generar descargas que requieren tratamiento y control.</p></div>
+<div class="person"><h3>Municipios y ciudades</h3><p>Las aguas residuales domésticas y urbanas constituyen una fuente importante, especialmente cuando existen descargas sin tratamiento o sistemas de tratamiento insuficientes.</p></div>
+<div class="person"><h3>Residuos y tiraderos</h3><p>La basura y los residuos mal gestionados pueden terminar en cauces, barrancas y zonas de escurrimiento.</p></div>
+<div class="person"><h3>Agricultura</h3><p>Los escurrimientos de zonas agrícolas pueden transportar nutrientes, nitratos y agroquímicos hacia el sistema hídrico.</p></div>
+<div class="person"><h3>Ganadería y manufactura</h3><p>Los desechos de actividades pecuarias y manufactureras también forman parte de las presiones identificadas en la cuenca.</p></div>
+<div class="person"><h3>Contaminación difusa</h3><p>No toda la contaminación sale de una tubería visible: la lluvia puede arrastrar sustancias acumuladas en suelo y superficies hacia el río.</p></div>
+</div>
+<figure class="visual"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/R%C3%ADo%20Atoyac%20en%20San%20Mateo%20Ayecac%2C%20Tepetitla%20de%20Lardiz%C3%A1bal%2C%20Tlaxcala%2009.jpg" alt="Río Atoyac en San Mateo Ayecac"><figcaption class="caption">Río Atoyac en San Mateo Ayecac, Tepetitla de Lardizábal, Tlaxcala · Wikimedia Commons.</figcaption></figure>
+</section>
+
+<section id="personas">
+<div class="label">05 · ¿La contaminación afecta a las personas?</div>
+<h2 class="section-title">El problema ambiental también es social</h2>
+<div class="grid2"><div><p class="lead">La contaminación del Atoyac conecta agua, suelo, ecosistemas, agricultura, comunidades y salud.</p><p class="intro">Los diagnósticos y estudios de la cuenca han documentado presencia de materia orgánica, microorganismos, sólidos y sustancias tóxicas. También se han estudiado los riesgos sanitarios percibidos y las posibles vías de exposición. Esto no significa que una enfermedad individual pueda atribuirse automáticamente al río: la salud depende de múltiples factores y requiere evaluación epidemiológica específica.</p></div>
+<div class="card"><h3>¿Por qué importa?</h3><p>Porque un río contaminado puede afectar usos del agua, calidad ambiental, actividades agrícolas, biodiversidad y condiciones de vida. Recuperarlo es también una forma de proteger el territorio y a las comunidades que dependen de él.</p></div></div>
+<div class="chain"><span>Agua</span><span class="arrow">→</span><span>Suelo</span><span class="arrow">→</span><span>Alimentos</span><span class="arrow">→</span><span>Ecosistemas</span><span class="arrow">→</span><span>Comunidades</span></div>
+</section>
+
+<div class="impact" id="recuperacion">
+<div class="impact-inner">
+<div class="label" style="color:#b9dce3">06 · ¿Puede recuperarse el Atoyac?</div>
+<h2 class="section-title">Sí, pero el proceso sería integral y de largo plazo.</h2>
+<p class="intro">La experiencia de otros ríos muestra que una recuperación ambiental puede producir mejoras medibles cuando se combinan saneamiento, control de fuentes, restauración y monitoreo sostenido.</p>
+<div class="warning">“El problema es enorme pero la indiferencia también lo hace más grande”</div>
+<p class="intro">Esta frase resume el reto: la magnitud del problema no debe convertirse en una razón para dejar de actuar. La recuperación se construye mediante acciones continuas, medibles y coordinadas.</p>
+<div class="chain" style="margin-top:45px"><span>Controlar fuentes</span><span class="arrow">→</span><span>Tratar agua</span><span class="arrow">→</span><span>Restaurar</span><span class="arrow">→</span><span>Monitorear</span><span class="arrow">→</span><span>Mantener</span></div>
+</div></div>
+
+<section id="soluciones">
+<div class="label">07 · Soluciones</div>
+<h2 class="section-title">Aprender de ríos que ya están en recuperación</h2>
+<p class="intro">Como en este proyecto se busca proponer soluciones, vamos a ejemplificar con casos similares de otros países que han tenido éxito:</p>
+<div class="cases">
+<article class="case"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ashtabula%20River%20from%20Riverview%20Covered%20Bridge.jpg" alt="Río Ashtabula en Ohio"><div class="case-body"><h3>Inglaterra</h3><p>Entre 1990 y 2023, en la red de monitoreo de ríos de Inglaterra, la concentración media de amoníaco disminuyó 85 %, el ortofosfato 83 % y la demanda bioquímica de oxígeno (DBO) 46 %. Los resultados muestran una mejora sostenida de varios indicadores de calidad del agua.</p></div></article>
+<article class="case"><div style="height:220px;background:linear-gradient(135deg,#d9eceb,#6f9da8);display:grid;place-items:center;font-family:'Bodoni Moda',serif;font-size:4rem;color:white">ASHTABULA</div><div class="case-body"><h3>Río Ashtabula · EE. UU.</h3><p>Entre 2006 y 2007 se retiraron aproximadamente 497,000 yardas cúbicas de sedimentos contaminados. Después se restauraron hábitats y, en 2021, el río fue retirado de la lista de Áreas de Preocupación de los Grandes Lagos.</p></div></article>
+<article class="case"><div style="height:220px;background:linear-gradient(135deg,#244b59,#89b7b7);display:grid;place-items:center;font-family:'Bodoni Moda',serif;font-size:4rem;color:white">CUYAHOGA</div><div class="case-body"><h3>Río Cuyahoga · EE. UU.</h3><p>La recuperación ha sido gradual: se retiraron las restricciones al consumo de peces en 2019, la problemática de eutrofización en 2021 y la relacionada con cierre de playas en 2024. Aún quedan aspectos pendientes, por lo que el proceso continúa.</p></div></article>
+<article class="case"><div style="height:220px;background:linear-gradient(135deg,#164e63,#91c7c6);display:grid;place-items:center;font-family:'Bodoni Moda',serif;font-size:4rem;color:white">한강</div><div class="case-body"><h3>Río Han · Corea del Sur</h3><p>Entre 2022 y 2024, el oxígeno disuelto pasó de 9.5 a 10.4 mg/L; el nitrógeno total bajó de 3.684 a 3.133 mg/L y el fósforo total de 0.071 a 0.061 mg/L. Seúl relaciona la mejora con el perfeccionamiento de plantas de tratamiento y el monitoreo en tiempo real.</p></div></article>
+</div>
+<div class="card" style="margin-top:25px"><h3>¿Qué nos enseñan estos casos?</h3><p>La recuperación no depende de una sola obra ni de una acción aislada. Los resultados aparecen cuando las medidas se mantienen, se miden y se corrigen con el tiempo.</p></div>
+<div class="process">
+<div class="step"><b>01</b><h3>Identificar y controlar las fuentes</h3><p>Localizar descargas y detener las que incumplen.</p></div>
+<div class="step"><b>02</b><h3>Tratar las aguas residuales</h3><p>Mejorar y mantener plantas de tratamiento.</p></div>
+<div class="step"><b>03</b><h3>Retirar o remediar contaminantes acumulados</h3><p>Intervenir sedimentos cuando sea necesario.</p></div>
+<div class="step"><b>04</b><h3>Restaurar riberas y ecosistemas</h3><p>Recuperar vegetación, hábitats y conectividad.</p></div>
+<div class="step"><b>05</b><h3>Monitorear constantemente</h3><p>Medir indicadores y publicar resultados.</p></div>
+<div class="step"><b>06</b><h3>Involucrar a industrias, instituciones y comunidades</h3><p>Coordinar responsabilidades.</p></div>
+<div class="step"><b>07</b><h3>Mantener las acciones a largo plazo</h3><p>Convertir el saneamiento en un proceso continuo.</p></div>
+</div>
+<figure class="visual" style="margin-top:45px"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cause%20del%20rio%20-%20panoramio.jpg" alt="Cauce del Río Atoyac"><figcaption class="caption">Cauce del Río Atoyac · Wikimedia Commons.</figcaption></figure>
+<div class="sources-grid">
+<div class="sourcebox"><strong>Inglaterra · Environment Agency</strong><p>El análisis oficial de 135 sitios de monitoreo reporta las reducciones 1990–2023 de amoníaco, DBO y ortofosfato.</p></div>
+<div class="sourcebox"><strong>Ashtabula · US EPA</strong><p>La EPA documenta la extracción de 497,000 yardas cúbicas de sedimentos y la eliminación del estatus de Área de Preocupación en 2021.</p></div>
+<div class="sourcebox"><strong>Cuyahoga · US EPA</strong><p>La EPA registra la eliminación de varias problemáticas ambientales entre 2017 y 2024.</p></div>
+<div class="sourcebox"><strong>Han · Seoul Metropolitan Government</strong><p>El gobierno de Seúl publica los indicadores 2022–2024 y relaciona la mejora con tratamiento y monitoreo en tiempo real.</p></div>
+</div>
+</section>
+
+<div class="art" id="arte">
+<div class="art-inner">
+<div class="label" style="color:#b9dce3">Arte + medio ambiente</div>
+<h2 class="section-title">¿Cómo puede contribuir un artista plástico?</h2>
+<div class="art-grid">
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Frondoso%20arbol%20junto%20al%20rio%20-%20panoramio.jpg" alt="Paisaje ribereño del Atoyac">
+<div class="art-copy"><p>Un artista plástico puede contribuir a esta causa haciendo visible un problema que muchas veces se vuelve parte del paisaje cotidiano. A través de <strong>pintura, dibujo, grabado, fotografía, instalación, cartel, ilustración, video o arte comunitario</strong>, puede transformar información ambiental en experiencias que generen reflexión.</p>
+<p>También puede crear archivos visuales del río, comparar el paisaje actual con posibles escenarios de restauración, trabajar con comunidades, divulgar datos mediante infografías y convertir exposiciones o espacios públicos en lugares de conversación sobre el agua.</p>
+<p><strong>El arte no sustituye al saneamiento técnico:</strong> puede acompañarlo al comunicar, sensibilizar, documentar y mantener el problema presente en la memoria colectiva.</p></div>
+</div></div></div>
+
+<section id="cierre" class="closing">
+<div class="label">Cierre · ODS 6</div>
+<blockquote>“¿Qué Atoyac queremos dejar?”</blockquote>
+<p>Recuperar el Atoyac significa recuperar una relación con el territorio. Los casos internacionales muestran que los cambios pueden ser medibles cuando existe continuidad; la participación social y el arte pueden ayudar a que esa recuperación no sea solamente técnica, sino también cultural y colectiva.</p>
+<div class="impact-line">“Un río no desaparece cuando dejamos de verlo; desaparece cuando dejamos de defender el futuro que representa.”</div>
+</section>
+
+<section id="referencias" style="padding-top:30px">
+<div class="label">Fuentes principales</div>
+<h2 class="section-title" style="font-size:3rem">Consulta y verifica</h2>
+<ul class="source-list">
+<li><a href="https://files.conagua.gob.mx/conagua/riosprioritarios/Diagn%C3%B3stico_R%C3%ADo_Atoyac_2012-2024.pdf" target="_blank">CONAGUA · Diagnóstico del Río Atoyac 2012–2024</a></li>
+<li><a href="https://dof.gob.mx/nota_detalle_popup.php?codigo=5199672" target="_blank">Diario Oficial de la Federación · Declaratoria de clasificación de los ríos Atoyac y Xochiac o Hueyapan</a></li>
+<li><a href="https://puebla.gob.mx/index.php/noticias/item/20865-avanza-diagnostico-para-rescate-del-rio-atoyac-con-participacion-de-sectores-productivos" target="_blank">Gobierno de Puebla · Diagnóstico para rescate del río Atoyac</a></li>
+<li><a href="https://www.gov.uk/government/publications/state-of-the-water-environment-indicator-b3-supporting-evidence/state-of-the-water-environment-long-term-trends-in-river-quality-in-england-2024" target="_blank">Environment Agency / GOV.UK · Long-term trends in river quality in England</a></li>
+<li><a href="https://www.epa.gov/great-lakes-aocs/ashtabula-river-aoc-delisted" target="_blank">US EPA · Ashtabula River AOC – Delisted</a></li>
+<li><a href="https://www.epa.gov/great-lakes-aocs/cuyahoga-river-aoc" target="_blank">US EPA · Cuyahoga River AOC</a></li>
+<li><a href="https://english.seoul.go.kr/smg-research-institute-of-public-health-environment-enhances-hangang-river-water-quality-for-three-consecutive-years/" target="_blank">Seoul Metropolitan Government · Hangang River water quality</a></li>
+<li><a href="https://commons.wikimedia.org/wiki/Category:R%C3%ADo_Atoyac" target="_blank">Wikimedia Commons · Categoría Río Atoyac</a></li>
+</ul>
+</section>
+
+<footer><div><strong>Río Atoyac: una herida de Puebla</strong> · Artículo visual</div><div>ODS 6 · Agua limpia y saneamiento</div><div>Autora · Pamela Gutierrez Vazquez</div></footer>
+<a class="top" id="top" href="#inicio" aria-label="Volver al inicio">↑</a>
+<script>
+const top=document.getElementById('top');
+window.addEventListener('scroll',()=>top.classList.toggle('show',window.scrollY>600));
+</script>
+</body>
+</html>
